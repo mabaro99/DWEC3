@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ver() {
+            let num = parseInt(document.getElementById("num").value);
+            if (num < 0 || num > 9) {
+                document.querySelector("span").innerHTML="ERROR";
+            } else {
+                setTimeout(() => {
+                    let lis="";
+                    for (let i=0; i<=10; i++) {
+                        lis+=`<tr><td>${num}*${i}=${num*i}</td></tr>`;
+                    }
+                    document.querySelector("table").innerHTML=lis;
+                    document.querySelector("span").innerHTML="";
+                }, 3000);
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="num">Escribe un numero</label>
+        <input type="number" id="num">
+        <input type="button" value="Boton" onclick="ver()">
+        <span></span>
+    </form>
+    <table></table>
+</body>
+</html>
